@@ -4,8 +4,8 @@
 As the runtime and libraries, download and install [http://www.python.org/download/ Python 2.5] or later first.
 
 {{{
-xcopy /s %PYTHON_HOME%\include\* %PYV8_HOME%\lib\python\inc
-xcopy /s %PYTHON_HOME%\libs\ Python25.lib %PYV8_HOME%\lib\python\lib
+copy %PYTHON_HOME%\include\* %PYV8_HOME%\lib\python\inc
+copy %PYTHON_HOME%\libs\ Python25.lib %PYV8_HOME%\lib\python\lib
 }}}
 
 == Boost ==
@@ -13,5 +13,13 @@ PyV8 use [http://www.boost.org/doc/libs/release/libs/python/doc/ boost::python] 
 
 {{{
 xcopy /s %BOOST_HOME%\boost %PYV8_HOME%\lib\boost\inc\
-xcopy /s %BOOST_HOME%\stage\lib\libboost_python*.lib %PYV8_HOME%\lib\boost\lib
+copy %BOOST_HOME%\stage\lib\libboost_python*.lib %PYV8_HOME%\lib\boost\lib
+}}}
+
+== Google V8 ==
+Follow the [http://code.google.com/apis/v8/build.html document] to download and build v8 engine
+
+{{{
+copy %V8_HOME%\include\* %PYV8_HOME%\lib\v8\inc\
+copy %V8_HOME%\lib\v8*.lib %PYV8_HOME%\lib\v8\lib\
 }}}
