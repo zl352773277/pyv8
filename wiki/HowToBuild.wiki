@@ -1,4 +1,22 @@
+#summary How to build the module from source
 #labels Phase-Implementation,Phase-Deploy
+
+= Build Steps =
+
+== Build the module ==
+Just run the setup.py with install or build command
+
+{{{
+setup.py install
+}}}
+
+== Build the distribution ==
+Just run the setup.py with bdist or bdist_wininst command
+
+{{{
+setup.py bdist_wininst
+}}}
+
 = Third Party Library =
 
 == Python ==
