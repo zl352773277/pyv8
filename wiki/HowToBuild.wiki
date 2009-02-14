@@ -1,7 +1,17 @@
 = Third Party Library =
 
 == Python ==
-Download and install [http://www.python.org/download/ Python 2.5] or later for runtime and compile, copy the files in %PYTHON_HOME%\include folder and Python25.lib from %PYTHON_HOME%\ libs, to the 3rd party folder %PYV8_HOME%\lib\python
+As the runtime and libraries, download and install [http://www.python.org/download/ Python 2.5] or later first.
+
+{{{
+xcopy /s %PYTHON_HOME%\include\* %PYV8_HOME%\lib\python\inc
+xcopy /s %PYTHON_HOME%\libs\ Python25.lib %PYV8_HOME%\lib\python\lib
+}}}
 
 == Boost ==
-PyV8 use [http://www.boost.org/doc/libs/release/libs/python/doc/ boost::python] for interoperability
+PyV8 use [http://www.boost.org/doc/libs/release/libs/python/doc/ boost::python] for interoperability, so, [http://www.boost.org/users/download/ download] the latest boost version and [http://www.boost.org/doc/libs/release/more/getting_started/ build] the library.
+
+{{{
+xcopy /s %BOOST_HOME%\boost %PYV8_HOME%\lib\boost\inc\
+xcopy /s %BOOST_HOME%\stage\lib\libboost_python*.lib %PYV8_HOME%\lib\boost\lib
+}}}
