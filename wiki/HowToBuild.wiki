@@ -1,0 +1,7 @@
+= Third Party Library =
+
+== Python ==
+Download and install [http://www.python.org/download/ Python 2.5] or later for runtime and compile, copy the files in %PYTHON_HOME%\include folder and Python25.lib from %PYTHON_HOME%\ libs, to the 3rd party folder %PYV8_HOME%\lib\python
+
+== Boost ==
+PyV8 use [http://www.boost.org/doc/libs/release/libs/python/doc/ boost::python] for interoperability
