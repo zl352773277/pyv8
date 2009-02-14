@@ -4,14 +4,14 @@
 = Build Steps =
 
 == Build the module ==
-Just run the setup.py with install or build command
+Just run the setup.py with *install* or *build* command
 
 {{{
 setup.py install
 }}}
 
 == Build the distribution ==
-Just run the setup.py with bdist or bdist_wininst command
+Just run the setup.py with *bdist* or *bdist_wininst* command
 
 {{{
 setup.py bdist_wininst
