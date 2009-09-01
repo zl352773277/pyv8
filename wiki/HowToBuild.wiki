@@ -22,23 +22,14 @@ setup.py bdist_wininst
 == Python ==
 As the runtime and libraries, download and install [http://www.python.org/download/ Python 2.5] or later first.
 
-{{{
-copy %PYTHON_HOME%\include\* %PYV8_HOME%\lib\python\inc
-copy %PYTHON_HOME%\libs\ Python25.lib %PYV8_HOME%\lib\python\lib
-}}}
+set environment variable V8_HOME to the python root folder
 
 == Boost ==
 PyV8 use [http://www.boost.org/doc/libs/release/libs/python/doc/ boost::python] for interoperability, so, [http://www.boost.org/users/download/ download] the latest boost version and [http://www.boost.org/doc/libs/release/more/getting_started/ build] the library.
 
-{{{
-xcopy /s %BOOST_HOME%\boost %PYV8_HOME%\lib\boost\inc\
-copy %BOOST_HOME%\stage\lib\libboost_python*.lib %PYV8_HOME%\lib\boost\lib
-}}}
+set environment variable V8_HOME to the boost root folder
 
 == Google V8 ==
 Follow the [http://code.google.com/apis/v8/build.html document] to download and build v8 engine
 
-{{{
-copy %V8_HOME%\include\* %PYV8_HOME%\lib\v8\inc\
-copy %V8_HOME%\lib\v8*.lib %PYV8_HOME%\lib\v8\lib\
-}}}
+set environment variable V8_HOME to the v8 root folder
