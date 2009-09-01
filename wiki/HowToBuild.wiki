@@ -30,6 +30,6 @@ PyV8 use [http://www.boost.org/doc/libs/release/libs/python/doc/ boost::python] 
 set environment variable BOOST_HOME to the boost root folder
 
 == Google V8 ==
-Follow the [http://code.google.com/apis/v8/build.html document] to download and build v8 engine
+Follow the [http://code.google.com/apis/v8/build.html document] to download and build v8 engine as static library
 
 set environment variable V8_HOME to the v8 root folder
