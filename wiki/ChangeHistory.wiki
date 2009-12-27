@@ -1,0 +1,14 @@
+#labels Phase-Implementation,Phase-Support
+#The change history of PyV8
+
+= v0.8 =
+==Features==
+  * support both the multi-python and multi-javascript thread mode
+  * support terminate javascript thread with JSEngine methods: terminateThread/terminateAllThread 
+  * support notify v8 the working status with JSEngine methods: dispose/idle/lowMemory
+  * support to get call stack from exception with stackTrace attribute
+  * build at MAC platform
+==Fixed Issues==
+  * issue #8 class instance not derived from object returned as Global causes segfault
+==TODO==
+==Known Issues==
