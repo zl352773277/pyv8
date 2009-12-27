@@ -3,6 +3,7 @@
 
 = v0.8 =
 ==Major Features==
+  * integrate with the latest v8 engine v2.0.5.2
   * both the multi-python and multi-javascript thread mode
   * the preemption shedule for multi-javascript threads
   * terminate javascript thread with JSEngine methods: terminateThread/terminateAllThread 
