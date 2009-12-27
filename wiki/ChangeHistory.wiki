@@ -18,5 +18,8 @@
   * issue #8 class instance not derived from object returned as Global causes segfault
   * Issue #9 Incorrect unicode conversion between python object and javascript object on FreeBSD
   * Issue #12 AttributeError: 'Boost.Python.StaticProperty' object attribute '__doc__' is read-only
-==TODO==
+  * Issue #13 Python fatal error during RegExp match
+  * Issue #15 Initialize JSArray before enter a context
+  * Issue #16 register multiple native JSExtensions
 ==Known Issues==
+  * serialize/deserialize still doesn't work :(
