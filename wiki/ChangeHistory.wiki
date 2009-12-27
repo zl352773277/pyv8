@@ -2,13 +2,21 @@
 #The change history of PyV8
 
 = v0.8 =
-==Features==
-  * support both the multi-python and multi-javascript thread mode
-  * support terminate javascript thread with JSEngine methods: terminateThread/terminateAllThread 
-  * support notify v8 the working status with JSEngine methods: dispose/idle/lowMemory
-  * support to get call stack from exception with stackTrace attribute
+==Major Features==
+  * both the multi-python and multi-javascript thread mode
+  * the preemption shedule for multi-javascript threads
+  * terminate javascript thread with JSEngine methods: terminateThread/terminateAllThread 
+  * the javascript extension with python or javascript
+==Minor Changes==
+  * notify v8 the working status with JSEngine methods: dispose/idle/lowMemory
+  * precompile javascript source with JSEngine method precompile
+  * get call stack from exception with stackTrace attribute
+  * set v8 flags with JSEngine method setFlags
+  * build with Visual Studio 2008
   * build at MAC platform
 ==Fixed Issues==
   * issue #8 class instance not derived from object returned as Global causes segfault
+  * Issue #9 Incorrect unicode conversion between python object and javascript object on FreeBSD
+  * Issue #12 AttributeError: 'Boost.Python.StaticProperty' object attribute '__doc__' is read-only
 ==TODO==
 ==Known Issues==
