@@ -1,5 +1,5 @@
+#summary The change history of PyV8
 #labels Phase-Implementation,Phase-Support
-#The change history of PyV8
 
 = v0.8 =
 ==Major Features==
