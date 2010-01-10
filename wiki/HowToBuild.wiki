@@ -1,5 +1,5 @@
 #summary How to build the module from source
-#labels Phase-Implementation,Phase-Deploy
+#labels Phase-Implementation,Phase-Deploy,Featured
 
 = Build Steps =
 
