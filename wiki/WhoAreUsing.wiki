@@ -15,4 +15,4 @@ We know of the following projects using PyV8:
   * [http://pyjs.org/ pyjamas] a port of Google Web Toolkit to Python.
     _You can write web applications in python - a readable programming language - instead of in HTML and Javascript, both of which become quickly unreadable for even medium-sized applications. Your application's design can benefit from encapsulating high level concepts into classes and modules (instead of trying to fit as much HTML as you can stand into one page); you can reuse - and import - classes and modules.
 
-Also, the AJAX library takes care of all the browser interoperability issues on your behalf, leaving you free to focus on application development instead of learning all the "usual" browser incompatibilities._
+    Also, the AJAX library takes care of all the browser interoperability issues on your behalf, leaving you free to focus on application development instead of learning all the "usual" browser incompatibilities._
