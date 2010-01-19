@@ -39,3 +39,23 @@ If you want to build v8 with GCC 4.x at x64 platform, you should compile v8 with
 export CCFLAGS=-fPIC
 scons arch=x64
 }}}
+
+== Debug Mode ==
+You could build Google v8 and PyV8 with debug mode, for more detail debug information.
+
+  * Build v8 with debug mode
+{{{
+scons mode=debug # x86
+scons mode=debug arch=x64 #64
+}}}
+  * Set or export DEBUG=1
+{{{
+set DEBUG=1 # Windows
+export DEBUG=1 # Unix
+}}}
+  * Build pyv8 with setup.py
+{{{
+python setup.py build
+}}}
+
+_contribute by  gaussgss_
