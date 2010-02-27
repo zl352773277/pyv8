@@ -14,8 +14,8 @@
   * support to build at Mac OS X
 
 ==Fixed Issues==
-  * issues #17 handle the constructor style function call with __call__ method
-  * issues #18 support python property with getter/setter
+  * issue #17 handle the constructor style function call with __call__ method
+  * issue #18 support python property with getter/setter
   * issue #19 disable the build-in supports for python property by default, and use python side implementation
   * issue #20 use BaseException.args instead of deprecated message to follow PEP 352
   * issue #21 support to use the python mapping protocol from Javascript side
