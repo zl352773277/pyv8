@@ -3,6 +3,13 @@
 
 = Build Steps =
 
+== Precompiled Packages ==
+If you want to try pyv8 ASAP, we suggest you use precompiled package for your platform.
+
+Please downloads the precompiled [http://code.google.com/p/pyv8/downloads/list packages] for Windows and Linux/Debian.
+
+tocer also provide packages [http://aur.archlinux.org/packages.php?ID=36092 (1)] [http://aur.archlinux.org/packages.php?ID=36076 (2)] for [http://www.archlinux.org/ ArchLinux]
+
 == Build the module ==
 Just run the setup.py with *install* or *build* command
 
@@ -59,8 +66,3 @@ python setup.py build
 }}}
 
 _contribute by  gaussgss_
-
-== Precompiled Packages ==
-Please downloads the precompiled [http://code.google.com/p/pyv8/downloads/list packages] for Windows and Linux/Debian.
-
-tocer also provide packages [http://aur.archlinux.org/packages.php?ID=36092 (1)] [http://aur.archlinux.org/packages.php?ID=36076 (2)] for [http://www.archlinux.org/ ArchLinux]
