@@ -70,4 +70,4 @@ _contribute by  gaussgss_
 == FAQ == 
 1. Fail to load _PyV8.so with AttributeError exception
 
-  If you got the exception "AttributeError: 'Boost.Python.StaticProperty' object attribute '__doc__' is read-only", please check your Python version. The Python 2.6.4 introduce a bug which will block boost 1.40 or earlier version. Please use Python 2.5.x/2.6.3, or upgrade your boost to 1.41 or later.
+  If you got the exception "AttributeError: 'Boost.Python.StaticProperty' object attribute '__doc__' is read-only", please check your Python version. The Python 2.6.4 introduce [http://www.mail-archive.com/python-dev@python.org/msg42741.html a known issue] which will break boost 1.40 or earlier version. Please use Python 2.5.x/2.6.3, or upgrade your boost to 1.41 or later. 
