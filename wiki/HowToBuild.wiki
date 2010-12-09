@@ -47,9 +47,9 @@ export CCFLAGS=-fPIC
 scons arch=x64
 }}}
 
-=== 3.0 on Visual Studio ===
+=== v8 3.0 on Visual Studio ===
 
-Since Google V8 3.0, the Visual Studio solution of v8 will disable runtime typeinfo and C++ exception by default. It may save some bits of memory, but will broke the boost::python library and pyv8. So, we must enable it before build pyv8. You could apply the [http://code.google.com/p/pyv8/downloads/detail?name=common.patch&can=2&q= patch] or modify it by manual.
+The Visual Studio solution of v8 3.0 or later has disabled the runtime typeinfo and C++ exception by default. It may save some bits of memory, but will broke the boost::python library and pyv8. So, we must enable it before build pyv8. You could apply the [http://code.google.com/p/pyv8/downloads/detail?name=common.patch&can=2&q= patch] or modify it by manual.
 {{{
 Index: common.vsprops
 ===================================================================
