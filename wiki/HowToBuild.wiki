@@ -47,7 +47,7 @@ export CCFLAGS=-fPIC
 scons arch=x64
 }}}
 
-=== Google V8 3.0 on Visual Studio ===
+=== 3.0 on Visual Studio ===
 
 Since Google V8 3.0, the Visual Studio solution of v8 will disable runtime typeinfo and C++ exception by default. It may save some bits of memory, but will broke the boost::python library and pyv8. So, we must enable it before build pyv8. You could download the patch or modify it by manual.
 {{{
@@ -55,8 +55,13 @@ Index: common.vsprops
 ===================================================================
 --- common.vsprops	(Version 5952)
 +++ common.vsprops	(Working Copy)
-@@ -10,10 +10,10 @@
- 		 		MinimalRebuild="false"
+@@ -8,12 +8,12 @@
+ 	<Tool
+ 		Name="VCCLCompilerTool"
+ 		AdditionalIncludeDirectories="$(ProjectDir)\..\..\src;$(IntDir)\DerivedSources"
+-		PreprocessorDefinitions="WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;ENABLE_VMSTATE_TRACKING;ENABLE_LOGGING_AND_PROFILING;ENABLE_DEBUGGER_SUPPORT"
++		PreprocessorDefinitions="WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=1;ENABLE_VMSTATE_TRACKING;ENABLE_LOGGING_AND_PROFILING;ENABLE_DEBUGGER_SUPPORT"
+ 		MinimalRebuild="false"
 -		ExceptionHandling="0"
 -		RuntimeTypeInfo="false"
 +		ExceptionHandling="1"
@@ -67,6 +72,7 @@ Index: common.vsprops
  		Detect64BitPortabilityProblems="false"
  		DebugInformationFormat="3"
  		DisableSpecificWarnings="4355;4800"
+
 }}}
 
 == Debug Mode ==
