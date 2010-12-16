@@ -47,10 +47,15 @@ export CCFLAGS=-fPIC
 scons arch=x64
 }}}
 
-=== v8 3.0 on Visual Studio ===
+=== Runtime Type Information and C++ Exception in v8 3.0 ===
 
-The Visual Studio solution of v8 3.0 or later has disabled the runtime typeinfo and C++ exception by default. It may save some bits of memory, but will broke the boost::python library and pyv8. So, we must enable it before build pyv8. You could apply the [http://code.google.com/p/pyv8/downloads/detail?name=common.patch&can=2&q= patch] or modify it by manual.
+From the v8 engine 3.0, the build script of v8 engine has disabled RTTI and Exception by default. It may save some bits of memory, but will broke the boost::python library and pyv8. 
+
+So, we must enable it before build pyv8. 
+
+For the Visual Studio, you could apply the [http://code.google.com/p/pyv8/downloads/detail?name=common.patch&can=2&q= patch] or modify it by manual.
 {{{
+
 Index: common.vsprops
 ===================================================================
 --- common.vsprops	(Version 5952)
@@ -73,6 +78,31 @@ Index: common.vsprops
  		DebugInformationFormat="3"
  		DisableSpecificWarnings="4355;4800"
 
+}}}
+
+For the GCC and other environment base on the SCons, please remove the -fno-rtti and -fno-exceptions from SConstruct
+{{{
+Index: SConstruct
+===================================================================
+--- SConstruct  (revision 6041)
++++ SConstruct  (working copy)
+@@ -126,7 +126,7 @@
+   'gcc': {
+     'all': {
+       'CCFLAGS':      ['$DIALECTFLAGS', '$WARNINGFLAGS'],
+-      'CXXFLAGS':     ['$CCFLAGS', '-fno-rtti', '-fno-exceptions'],
++      'CXXFLAGS':     ['$CCFLAGS'],
+     },
+     'visibility:hidden': {
+       # Use visibility=default to disable this.
+@@ -455,7 +455,6 @@
+   'gcc': {
+     'all': {
+       'LIBPATH': ['.'],
+-      'CCFLAGS': ['-fno-rtti', '-fno-exceptions']
+     },
+     'os:linux': {
+       'LIBS':         ['pthread'],
 }}}
 
 == Debug Mode ==
