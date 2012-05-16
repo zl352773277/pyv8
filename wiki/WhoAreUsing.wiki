@@ -18,3 +18,8 @@ We know of the following projects using PyV8:
     _The number of client-side attacks has grown significantly in the past few years shifting focus on poorly protected vulnerable clients. Just as the most known honeypot technologies enable research into server-side attacks, honeyclients allow the study of client-side attacks.
    A complement to honeypots, a honeyclient is a tool designed to mimic the behavior of a user-driven network client application, such as a web browser, and be exploited by an attacker’s content.
    Thug is a Python low-interaction honeyclient aimed at mimicing the behavior of a web browser in order to detect and emulate malicious contents._
+  * [http://www.vim.org/scripts/script.php?script_id=4057 jsflakes.vim] A powerful vim plugin lint javascript code on the fly 
+   _For javascript file, jsflakes will automaticlly check errors in your code while you editing. 
+   [http://michalliu.github.com/jsflakes.vim/jsflakes.html Watch live video]_
+  * [http://www.vim.org/scripts/script.php?script_id=4050 jsruntime.vim] Run javascript in vim 
+   _It use PyV8 as javascript interpreter. if PyV8 not supported, it use node, cscript, spiderMonkey as fallbacks._
