@@ -131,11 +131,12 @@ python setup.py build
 _contribute by  gaussgss_
 
 ==Build with VS2010==
-Pyv8> set DISTUTILS_USE_SDK=true
-Pyv8> set MSSdk=true
-Pyv8> <vs2010_dir>\vc\bin\vcvars32.bat
-Pyv8> python setup.py build -c msvc
-
+{{{
+> set DISTUTILS_USE_SDK=true
+> set MSSdk=true
+> %vs2010%\vc\bin\vcvars32.bat
+> python setup.py build -c msvc
+}}}
 
 == FAQ == 
 1. Fail to load _PyV8.so with AttributeError exception
