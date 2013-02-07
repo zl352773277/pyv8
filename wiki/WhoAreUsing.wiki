@@ -23,3 +23,5 @@ We know of the following projects using PyV8:
    [http://michalliu.github.com/jsflakes.vim/jsflakes.html Watch live video]_
   * [http://www.vim.org/scripts/script.php?script_id=4050 jsruntime.vim] Run javascript in vim 
    _It use PyV8 as javascript interpreter. if PyV8 not supported, it use node, cscript, spiderMonkey as fallbacks._
+  * [https://github.com/sergeche/emmet-sublime Emmet for Sublime Text 2] Official Emmet plugin (previously called Zen Coding) for Sublime Text 2.
+   _[http://docs.emmet.io/ Emmet] takes the snippets idea to a whole new level: you can type CSS-like expressions that can be dynamically parsed, and produce output depending on what you type in the abbreviation. Emmet is developed and optimised for web-developers whose workflow depends on HTML/XML and CSS, but can be used with programming languages too.
