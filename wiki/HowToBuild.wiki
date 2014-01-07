@@ -37,6 +37,9 @@ PyV8 use [http://www.boost.org/doc/libs/release/libs/python/doc/ boost::python] 
 set environment variable BOOST_HOME to the boost root folder
 
 == Google V8 ==
+
+* Please use PyV8's setup.py script to build Google V8, because PyV8 need RTTI and Exception support, check the following section for more detail *
+
 Follow the [http://code.google.com/apis/v8/build.html document] to download and build v8 engine as static library
 
 set environment variable V8_HOME to the v8 root folder
@@ -56,59 +59,9 @@ You may also need build Boost with '-fPIC' argument.
 
 From the v8 engine 3.0, the build script of v8 engine has disabled RTTI and Exception by default. It may save some bits of memory, but will broke the boost::python library and pyv8. 
 
-So, we must enable it before build pyv8. 
+PyV8's setup.py will try to automatic patch V8's build scripts to enable RTTI and Exception supports.
 
-For the Visual Studio, you could apply the [http://code.google.com/p/pyv8/downloads/detail?name=common.patch&can=2&q= patch] or modify it by manual.
-{{{
-
-Index: common.vsprops
-===================================================================
---- common.vsprops	(Version 5952)
-+++ common.vsprops	(Working Copy)
-@@ -8,12 +8,12 @@
- 	<Tool
- 		Name="VCCLCompilerTool"
- 		AdditionalIncludeDirectories="$(ProjectDir)\..\..\src;$(IntDir)\DerivedSources"
--		PreprocessorDefinitions="WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;ENABLE_VMSTATE_TRACKING;ENABLE_LOGGING_AND_PROFILING;ENABLE_DEBUGGER_SUPPORT"
-+		PreprocessorDefinitions="WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=1;ENABLE_VMSTATE_TRACKING;ENABLE_LOGGING_AND_PROFILING;ENABLE_DEBUGGER_SUPPORT"
- 		MinimalRebuild="false"
--		ExceptionHandling="0"
--		RuntimeTypeInfo="false"
-+		ExceptionHandling="1"
-+		RuntimeTypeInfo="yes"
- 		WarningLevel="3"
--		WarnAsError="true"
-+		WarnAsError="false"
- 		Detect64BitPortabilityProblems="false"
- 		DebugInformationFormat="3"
- 		DisableSpecificWarnings="4355;4800"
-
-}}}
-
-For the GCC and other environment base on the SCons, please remove the -fno-rtti and -fno-exceptions from SConstruct
-{{{
-Index: SConstruct
-===================================================================
---- SConstruct  (revision 6041)
-+++ SConstruct  (working copy)
-@@ -126,7 +126,7 @@
-   'gcc': {
-     'all': {
-       'CCFLAGS':      ['$DIALECTFLAGS', '$WARNINGFLAGS'],
--      'CXXFLAGS':     ['$CCFLAGS', '-fno-rtti', '-fno-exceptions'],
-+      'CXXFLAGS':     ['$CCFLAGS'],
-     },
-     'visibility:hidden': {
-       # Use visibility=default to disable this.
-@@ -455,7 +455,6 @@
-   'gcc': {
-     'all': {
-       'LIBPATH': ['.'],
--      'CCFLAGS': ['-fno-rtti', '-fno-exceptions']
-     },
-     'os:linux': {
-       'LIBS':         ['pthread'],
-}}}
+So, please set V8_HOME environment variable port to your V8 code, or let's PyV8's setup.py checkout a private build, before you make a clean build.
 
 == Debug Mode ==
 You could build Google v8 and PyV8 with debug mode, for more detail debug information.
@@ -137,6 +90,25 @@ _contribute by  gaussgss_
 > %vs2010%\vc\bin\vcvars32.bat
 > python setup.py build -c msvc
 }}}
+
+== Build with Mac OSX 10.9 Mavericks with XCode 5 ==
+XCode 5 will use libc++ as default standard C++ library by default, but Google V8 use libstdc++ by default.
+
+You may get following error with wrong library.
+
+{{{
+Symbol not found: __ZSt20__throw_length_errorPKc
+}}}
+
+So, please set the environment variable before build V8 and PyV8
+
+{{{
+$ export CXXFLAGS='-std=c++11 -stdlib=libc++ -mmacosx-version-min=10.8'
+$ export LDFLAGS=-lc++
+$ python setup.py build
+}}}
+
+please check issue #220 for more detail.
 
 == FAQ == 
 1. Fail to load _PyV8.so with AttributeError exception
